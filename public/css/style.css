@@ -1,0 +1,346 @@
+#text {
+    font-family: 'Press Start 2P';
+    color: black;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+#bgvid {
+    object-fit: fill;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.titlepic {
+    position: fixed;
+    margin-left: 510px;
+    margin-top: 0.5px;
+    top: 0;
+}
+
+.ship {
+    position: fixed;
+    margin-left: -30px;
+    margin-top: 205px;
+}
+
+.shiprev {
+    position: fixed;
+    margin-left: 900px;
+    margin-top: 205px;
+}
+
+
+.bkgd {
+    cursor: pointer;
+    display: none;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+
+.bkgd .helper{
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
+} 
+
+.bkgd>div {
+    background-color: #fff;
+    /*box-shadow: 10px 10px 60px #555;*/
+    display: inline-block;
+    height: auto;
+    max-width: 500px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: auto;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: -9px;
+    right: -15px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+
+.popup_trigger {
+	cursor: pointer;
+	height: 40;
+	width: 40;
+    margin-top: 310px;
+    margin-left: -200px;
+    margin: 20px;
+    font-weight: bold;
+	position: fixed;
+	
+}
+
+#canongame1 {
+    position: fixed;
+    z-index: 1100;
+    margin-top: 330px;
+    margin-left: -200px;
+}
+
+* {
+    margin-top: 18;
+    margin-bottom: 2px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P';
+    text-align: center;
+    margin-top: 0rem; 
+ 
+}
+
+h1 {
+    font-size: 40px;
+}
+
+
+a {
+    position: relative;
+    top: 6rem;
+    font-size: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    color: black;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.container {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 700px;
+    height: 60px;
+    top: 11.5rem;
+    /*background: rgba(10, 10, 10, 0.918);*/
+    /*border: 1px solid rgb(4, 11, 107);*/
+    padding: .5rem;
+    z-index: 100;
+}
+
+.board{
+	width: 700px;
+	height: 600px;
+	background: #00658F;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+}
+
+.game{
+	position: relative;
+	width: 700px;
+	margin: 120px auto 0;
+}
+
+.your_color{
+	position: absolute;
+	top: -100px;
+	margin-left: 5px;
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+	background: #000;
+	opacity: 0;
+}
+
+.your_color.show{
+	opacity: 1;
+}
+
+.opponent_color{
+	position: absolute;
+	top: -100px;
+	margin-left: 5px;
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+	background: #000;
+	opacity: 0;
+}
+
+.opponent_color.show{
+	opacity: .3;
+}
+
+.board .overlay{
+	position: absolute;
+	z-index: 1000;
+	left: 7px;
+	top: 7px;
+	pointer-events: none;
+	-webkit-filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.1));
+	filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.1));
+}
+
+.cols{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100;
+}
+
+.cols > .col{
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 100%;
+}
+
+
+@-moz-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
+@-webkit-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
+@-ms-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
+@keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
+.coin.winner_coin{
+	-moz-transition:all 1s ease-in-out;
+	-webkit-transition:all 1s ease-in-out;
+	-o-transition:all 1s ease-in-out;
+	-ms-transition:all 1s ease-in-out;
+	transition:all 1s ease-in-out;
+	-moz-animation:blink normal 1s infinite ease-in-out;
+	-webkit-animation:blink normal 1s infinite ease-in-out;
+	-ms-animation:blink normal 1s infinite ease-in-out;
+	animation:blink normal 1s infinite ease-in-out;
+}
+
+.coin{
+	position: absolute;
+	left: 5px;
+	margin-top: 5px;
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+}
+
+.red{
+	background: #e61;
+}
+.yellow{
+	background: #0ba;
+}
+
+.hidden{
+	display: none;
+}
+
+/* overlay with popups */
+
+.underlay{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	margin-top: 30ch;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 10000;
+}
+
+.popover{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	top: 0;
+	margin-top: 30ch;
+	box-sizing: border-box;
+	padding: 10px;
+	height: 140px;
+	width: 400px;
+	background: #f2f2f2;
+	z-index: 10000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+}
+
+.popover h2{
+	font-size: 24px;
+	padding: 0;
+	margin: 0;
+	line-height: 1.5em;
+}
+
+.popover p{
+	margin: 0;
+	padding: 0;
+	line-height: 2em;
+}
+
+.popover input{
+	position: absolute;
+	bottom: -3rem;
+	width: 480px;
+	line-height: 2em;
+	margin-left: -15rem;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	border: 1px solid #333;
+	outline: none;
+}
+
+.status{
+	position: absolute;
+	/* bottom: 0px; */
+	width: 100%;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	color: #fff;
+	background-color: #e64;
+	border-radius: 0 0 10px 10px;
+}
+
+@media only screen and (max-device-width: 768px) {
+	.game {
+		margin: 120px 0;
+		zoom: 138% !important;
+	}
+}
